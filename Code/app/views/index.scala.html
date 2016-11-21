@@ -1,0 +1,24 @@
+@(message: String)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>@message</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <script src="@routes.Assets.versioned("../../public/javascripts/websocket.js")" type="text/javascript"></script>
+    </head>
+    <body>
+        <input type="text" id="wsInput">
+        <button onclick="send()">Send</button>
+        <div id="echo-log" style="float: left;
+            margin-left: 20px;
+            padding-left: 20px;
+            width: 350px;
+            border-left: solid 1px #cccccc;"> <strong>Log:</strong>
+            <div id="wsHistory"></div>
+            <button id="clearLogBut" onclick="clearLog()" style="position: relative;
+                top: 3px;">Clear log</button>
+        </div>
+    </body>
+</html>
